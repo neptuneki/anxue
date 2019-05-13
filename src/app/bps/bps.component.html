@@ -1,0 +1,20 @@
+<h2>Bps</h2>
+<ul class="bps">
+	<li *ngFor="let bp of bps" (click)="onSelect(bp)" [class.selected]="bp===selectedBp">
+		<span class="badge">{{bp.id}}</span>{{bp.name}}
+		
+	</li>
+	
+</ul>
+
+
+<div *ngIf="selectedBp">
+	<h2>{{selectedBp.name | uppercase}} Detail</h2>
+	<div><span>id: </span>{{selectedBp.id}}</div>
+	<div>
+		<label for="">name:
+			<input [(ngModel)]="selectedBp.name" placeholder="name" />
+		</label>
+	</div>
+</div>
+
